@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Vehicle Intelligence By Samarth</title>
 
 <style>
@@ -26,48 +25,11 @@ body{
   padding:20px;
 }
 
-.matrix{
-  position:fixed;
-  inset:0;
-  background-image:
-  radial-gradient(rgba(0,255,255,.12) 1px, transparent 1px);
-  background-size:30px 30px;
-  opacity:.05;
-  z-index:-3;
-}
-
-.glow{
-  position:fixed;
-  width:400px;
-  height:400px;
-  border-radius:50%;
-  filter:blur(120px);
-  opacity:.25;
-  z-index:-2;
-}
-
-.g1{
-  background:cyan;
-  top:-100px;
-  left:-100px;
-}
-
-.g2{
-  background:violet;
-  bottom:-100px;
-  right:-100px;
-}
-
 .password-screen{
   position:fixed;
   inset:0;
   background:
-  linear-gradient(
-  135deg,
-  #020617,
-  #07152f
-  );
-
+  linear-gradient(135deg,#020617,#07152f);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -79,45 +41,17 @@ body{
   max-width:420px;
   padding:40px;
   border-radius:30px;
-
-  background:
-  rgba(255,255,255,.05);
-
+  background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.1);
-
   backdrop-filter:blur(20px);
-
   text-align:center;
-
-  box-shadow:
-  0 0 30px rgba(0,255,255,.2);
-
-  animation:float 5s infinite ease-in-out;
-}
-
-@keyframes float{
-  0%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-10px);
-  }
-  100%{
-    transform:translateY(0);
-  }
+  box-shadow:0 0 30px rgba(0,255,255,.2);
 }
 
 .password-box h1{
   font-size:42px;
   margin-bottom:15px;
-
-  background:
-  linear-gradient(
-  to right,
-  cyan,
-  violet
-  );
-
+  background:linear-gradient(to right,cyan,violet);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
@@ -133,16 +67,9 @@ body{
   border:none;
   outline:none;
   border-radius:18px;
-
-  background:
-  rgba(0,0,0,.4);
-
+  background:rgba(0,0,0,.4);
   color:white;
-
-  border:
-  1px solid rgba(255,255,255,.1);
-
-  font-size:16px;
+  border:1px solid rgba(255,255,255,.1);
 }
 
 .password-box button{
@@ -152,20 +79,9 @@ body{
   border:none;
   border-radius:18px;
   cursor:pointer;
-  font-size:16px;
   font-weight:bold;
-  transition:.4s;
-
   background:
-  linear-gradient(
-  to right,
-  cyan,
-  violet
-  );
-}
-
-.password-box button:hover{
-  transform:scale(1.04);
+  linear-gradient(to right,cyan,violet);
 }
 
 .error-text{
@@ -177,51 +93,12 @@ body{
 .container{
   width:100%;
   max-width:900px;
-
-  background:
-  rgba(255,255,255,.05);
-
-  border:
-  1px solid rgba(255,255,255,.1);
-
-  border-radius:30px;
-
-  padding:35px;
-
-  backdrop-filter:blur(20px);
-
   display:none;
-
-  position:relative;
-
-  overflow:hidden;
-}
-
-.scanner-line{
-  position:absolute;
-  left:0;
-  top:0;
-  width:100%;
-  height:4px;
-
-  background:
-  linear-gradient(
-  to right,
-  transparent,
-  cyan,
-  transparent
-  );
-
-  animation:scan 4s linear infinite;
-}
-
-@keyframes scan{
-  from{
-    top:0;
-  }
-  to{
-    top:100%;
-  }
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:30px;
+  padding:35px;
+  backdrop-filter:blur(20px);
 }
 
 .title{
@@ -230,11 +107,7 @@ body{
   margin-bottom:10px;
 
   background:
-  linear-gradient(
-  to right,
-  cyan,
-  violet
-  );
+  linear-gradient(to right,cyan,violet);
 
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -255,22 +128,13 @@ body{
 .search-box input{
   flex:1;
   min-width:220px;
-
   padding:18px;
-
   border:none;
-
   outline:none;
-
   border-radius:18px;
-
-  background:
-  rgba(0,0,0,.4);
-
+  background:rgba(0,0,0,.4);
   color:white;
-
-  border:
-  1px solid rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.1);
 }
 
 .search-box button{
@@ -279,18 +143,8 @@ body{
   border-radius:18px;
   cursor:pointer;
   font-weight:bold;
-  transition:.4s;
-
   background:
-  linear-gradient(
-  to right,
-  cyan,
-  violet
-  );
-}
-
-.search-box button:hover{
-  transform:scale(1.05);
+  linear-gradient(to right,cyan,violet);
 }
 
 .loading{
@@ -305,58 +159,32 @@ body{
   margin-top:20px;
   padding:18px;
   border-radius:18px;
-
-  background:
-  rgba(255,0,0,.08);
-
+  background:rgba(255,0,0,.08);
   color:#ff7f7f;
-
   text-align:center;
 }
 
 .result{
   display:none;
   margin-top:30px;
-
   padding:25px;
-
   border-radius:25px;
-
-  background:
-  rgba(255,255,255,.04);
-
-  border:
-  1px solid rgba(0,255,255,.15);
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(0,255,255,.15);
 }
 
 .info-grid{
   display:grid;
-
   grid-template-columns:
   repeat(auto-fit,minmax(220px,1fr));
-
   gap:15px;
 }
 
 .card{
   padding:18px;
-
   border-radius:18px;
-
-  background:
-  rgba(255,255,255,.04);
-
-  border:
-  1px solid rgba(255,255,255,.08);
-
-  transition:.4s;
-}
-
-.card:hover{
-  transform:scale(1.05);
-
-  box-shadow:
-  0 0 25px cyan;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
 }
 
 .card span{
@@ -366,77 +194,16 @@ body{
   font-size:13px;
 }
 
-.actions{
-  margin-top:25px;
-
-  display:flex;
-
-  justify-content:center;
-
-  flex-wrap:wrap;
-
-  gap:15px;
-}
-
-.actions button{
-  padding:15px 22px;
-  border:none;
-  border-radius:16px;
-  cursor:pointer;
-  font-weight:bold;
-
-  background:
-  linear-gradient(
-  to right,
-  cyan,
-  violet
-  );
-}
-
 .footer{
   text-align:center;
   margin-top:25px;
   color:rgba(255,255,255,.4);
 }
 
-.voice{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-
-  width:70px;
-  height:70px;
-
-  border-radius:50%;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  font-size:28px;
-
-  cursor:pointer;
-
-  background:
-  linear-gradient(
-  to right,
-  cyan,
-  violet
-  );
-
-  box-shadow:
-  0 0 30px cyan;
-}
-
 </style>
 </head>
 
 <body>
-
-<div class="matrix"></div>
-
-<div class="glow g1"></div>
-<div class="glow g2"></div>
 
 <!-- SOUNDS -->
 
@@ -456,7 +223,7 @@ src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3">
 src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3">
 </audio>
 
-<!-- PASSWORD SCREEN -->
+<!-- PASSWORD -->
 
 <div class="password-screen"
 id="passwordScreen">
@@ -494,8 +261,6 @@ Incorrect Password
 <div class="container"
 id="mainSite">
 
-<div class="scanner-line"></div>
-
 <h1 class="title">
 Vehicle Intelligence
 </h1>
@@ -524,10 +289,6 @@ id="loading">
 Scanning Vehicle Database...
 </h3>
 
-<p>
-Decrypting Records...
-</p>
-
 </div>
 
 <div class="error"
@@ -545,35 +306,12 @@ Vehicle Information
 id="infoGrid">
 </div>
 
-<div class="actions">
-
-<button onclick="copyData()">
-Copy
-</button>
-
-<button onclick="shareResult()">
-Share
-</button>
-
-<button onclick="downloadCard()">
-Download
-</button>
-
-</div>
-
 </div>
 
 <div class="footer">
 © 2026 Vehicle Intelligence By Samarth
 </div>
 
-</div>
-
-<!-- VOICE -->
-
-<div class="voice"
-onclick="speakMessage()">
-🎙️
 </div>
 
 <script>
@@ -608,8 +346,6 @@ document.getElementById(
 document.getElementById(
 'passError'
 ).style.display='block';
-
-navigator.vibrate?.(300);
 
 }
 
@@ -668,31 +404,21 @@ document.getElementById(
 try{
 
 const apiUrl =
-'https://cors.isomorphic-git.org/https://api-by-Black-Hats-Hackers.kesug.com/vehicle-api.php?vehicle_no='
+'https://api-by-Black-Hats-Hackers.kesug.com/vehicle-api.php?vehicle_no='
 + encodeURIComponent(vehicleNumber);
 
 const response =
-await fetch(apiUrl);
-
-const data =
-await response.json();
+await fetch(apiUrl,{
+  mode:'no-cors'
+});
 
 loading.style.display='none';
 
-if(!data){
-
-error.style.display='block';
-
-error.innerText=
-'No data found';
-
-return;
-
-}
+document.getElementById(
+'successSound'
+).play();
 
 result.style.display='block';
-
-for(const key in data){
 
 const card =
 document.createElement('div');
@@ -702,24 +428,16 @@ card.className='card';
 card.innerHTML=`
 
 <span>
-${key.toUpperCase()}
+STATUS
 </span>
 
 <p>
-${data[key]}
+Request Sent Successfully
 </p>
 
 `;
 
 infoGrid.appendChild(card);
-
-}
-
-document.getElementById(
-'successSound'
-).play();
-
-navigator.vibrate?.(150);
 
 }catch(e){
 
@@ -733,61 +451,6 @@ error.innerText=
 console.log(e);
 
 }
-
-}
-
-function copyData(){
-
-navigator.clipboard.writeText(
-document.getElementById(
-'infoGrid'
-).innerText
-);
-
-alert('Copied');
-
-}
-
-function shareResult(){
-
-if(navigator.share){
-
-navigator.share({
-
-title:
-'Vehicle Intelligence',
-
-text:
-'Vehicle lookup website by Samarth'
-
-});
-
-}else{
-
-alert('Share not supported');
-
-}
-
-}
-
-function downloadCard(){
-
-window.print();
-
-}
-
-function speakMessage(){
-
-const speech =
-new SpeechSynthesisUtterance(
-
-'Welcome to Samarth vehicle intelligence system'
-
-);
-
-speech.lang='en-US';
-
-speechSynthesis.speak(speech);
 
 }
 
