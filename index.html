@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vehicle Information By Samarth</title>
+<title>Vehicle Intelligence System</title>
 
 <style>
 
@@ -16,8 +16,7 @@
 }
 
 body{
-  background:
-    radial-gradient(circle at top left,#07152f,#050816 60%);
+  background:#050816;
   min-height:100vh;
   overflow-x:hidden;
   color:white;
@@ -25,23 +24,13 @@ body{
   justify-content:center;
   align-items:center;
   padding:20px;
-  animation:bgMove 20s linear infinite;
-}
-
-@keyframes bgMove{
-  from{
-    background-position:0 0;
-  }
-  to{
-    background-position:1000px 1000px;
-  }
 }
 
 .matrix{
   position:fixed;
   inset:0;
   background-image:
-    radial-gradient(rgba(0,255,255,.12) 1px, transparent 1px);
+  radial-gradient(rgba(0,255,255,.12) 1px, transparent 1px);
   background-size:30px 30px;
   opacity:.05;
   z-index:-3;
@@ -69,179 +58,159 @@ body{
   right:-100px;
 }
 
-.anime-circle{
-  position:fixed;
-  width:250px;
-  height:250px;
-  border-radius:50%;
-  border:2px solid rgba(0,255,255,.15);
-  animation:spin 15s linear infinite;
-  z-index:-1;
-}
-
-.circle1{
-  top:10%;
-  left:5%;
-}
-
-.circle2{
-  bottom:10%;
-  right:5%;
-}
-
-@keyframes spin{
-  from{
-    transform:rotate(0deg);
-  }
-  to{
-    transform:rotate(360deg);
-  }
-}
-
 .password-screen{
   position:fixed;
   inset:0;
-  background:black;
-  z-index:9999;
+  background:
+  linear-gradient(
+  135deg,
+  #020617,
+  #07152f
+  );
+
   display:flex;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
-  padding:20px;
+  z-index:9999;
 }
 
-.password-screen h1{
-  font-size:50px;
-  margin-bottom:25px;
-  background:linear-gradient(to right,cyan,violet);
+.password-box{
+  width:100%;
+  max-width:420px;
+  padding:40px;
+  border-radius:30px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(20px);
+  text-align:center;
+  animation:float 5s infinite ease-in-out;
+  box-shadow:
+  0 0 30px rgba(0,255,255,.2);
+}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+
+.password-box h1{
+  font-size:42px;
+  margin-bottom:15px;
+
+  background:
+  linear-gradient(
+  to right,
+  cyan,
+  violet
+  );
+
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
+.password-box p{
+  color:rgba(255,255,255,.6);
+  margin-bottom:25px;
+}
+
+.password-box input{
+  width:100%;
+  padding:18px;
+  border:none;
+  outline:none;
+  border-radius:18px;
+  background:rgba(0,0,0,.4);
+  color:white;
+  border:1px solid rgba(255,255,255,.1);
+  font-size:16px;
+}
+
+.password-box button{
+  width:100%;
+  margin-top:20px;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:16px;
+  transition:.4s;
+
+  background:
+  linear-gradient(
+  to right,
+  cyan,
+  violet
+  );
+}
+
+.password-box button:hover{
+  transform:scale(1.04);
+}
+
+.error-text{
+  color:#ff7f7f;
+  margin-top:15px;
+  display:none;
+}
+
 .container{
   width:100%;
-  max-width:850px;
+  max-width:900px;
+  display:none;
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.1);
-  backdrop-filter:blur(20px);
   border-radius:30px;
   padding:35px;
+  backdrop-filter:blur(20px);
   position:relative;
   overflow:hidden;
-  display:none;
-  animation:
-    zoomPulse 6s infinite ease-in-out,
-    animeFloat 8s infinite ease-in-out;
-}
-
-@keyframes zoomPulse{
-  0%{
-    transform:scale(1);
-  }
-  50%{
-    transform:scale(1.02);
-  }
-  100%{
-    transform:scale(1);
-  }
-}
-
-@keyframes animeFloat{
-  0%{
-    transform:translateY(0px);
-  }
-  50%{
-    transform:translateY(-10px);
-  }
-  100%{
-    transform:translateY(0px);
-  }
 }
 
 .scanner-line{
   position:absolute;
+  top:0;
   left:0;
   width:100%;
   height:4px;
+
   background:
-    linear-gradient(to right,transparent,cyan,transparent);
+  linear-gradient(
+  to right,
+  transparent,
+  cyan,
+  transparent
+  );
+
   animation:scan 4s linear infinite;
 }
 
 @keyframes scan{
-  from{
-    top:0;
-  }
-  to{
-    top:100%;
-  }
-}
-
-.badge{
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.badge span{
-  display:inline-block;
-  padding:8px 18px;
-  border-radius:30px;
-  border:1px solid rgba(0,255,255,.2);
-  background:rgba(0,255,255,.08);
-  color:cyan;
-  font-size:13px;
+  from{top:0}
+  to{top:100%}
 }
 
 .title{
   text-align:center;
   font-size:42px;
   margin-bottom:10px;
-  position:relative;
-  background:linear-gradient(to right,cyan,violet);
+
+  background:
+  linear-gradient(
+  to right,
+  cyan,
+  violet
+  );
+
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-}
-
-.glitch::before,
-.glitch::after{
-  content:attr(data-text);
-  position:absolute;
-  left:0;
-  width:100%;
-}
-
-.glitch::before{
-  color:cyan;
-  animation:glitch1 .5s infinite;
-}
-
-.glitch::after{
-  color:violet;
-  animation:glitch2 .5s infinite;
-}
-
-@keyframes glitch1{
-  0%{left:0}
-  20%{left:-2px}
-  40%{left:2px}
-  60%{left:-1px}
-  80%{left:1px}
-  100%{left:0}
-}
-
-@keyframes glitch2{
-  0%{left:0}
-  20%{left:2px}
-  40%{left:-2px}
-  60%{left:1px}
-  80%{left:-1px}
-  100%{left:0}
 }
 
 .subtitle{
   text-align:center;
   color:rgba(255,255,255,.6);
-  margin-bottom:25px;
+  margin-bottom:30px;
 }
 
 .search-box{
@@ -250,55 +219,36 @@ body{
   flex-wrap:wrap;
 }
 
-input{
+.search-box input{
   flex:1;
   min-width:220px;
   padding:18px;
   border:none;
-  border-radius:16px;
+  border-radius:18px;
+  outline:none;
   background:rgba(0,0,0,.4);
   color:white;
-  outline:none;
   border:1px solid rgba(255,255,255,.1);
-  font-size:16px;
 }
 
-button{
-  padding:18px 28px;
+.search-box button{
+  padding:18px 30px;
   border:none;
-  border-radius:16px;
+  border-radius:18px;
   cursor:pointer;
-  background:linear-gradient(to right,cyan,violet);
-  color:black;
   font-weight:bold;
   transition:.4s;
-  position:relative;
-  overflow:hidden;
-}
 
-button:hover{
-  transform:scale(1.05);
-}
-
-button::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
   background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,.5),
-      transparent
-    );
-  transition:.5s;
+  linear-gradient(
+  to right,
+  cyan,
+  violet
+  );
 }
 
-button:hover::before{
-  left:100%;
+.search-box button:hover{
+  transform:scale(1.05);
 }
 
 .loading{
@@ -317,86 +267,61 @@ button:hover::before{
   border:1px solid rgba(0,255,255,.15);
 }
 
-.result h2{
-  color:cyan;
-  margin-bottom:20px;
-}
-
 .info-grid{
   display:grid;
   grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
+  repeat(auto-fit,minmax(220px,1fr));
   gap:15px;
 }
 
 .card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
   padding:18px;
   border-radius:18px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
   transition:.4s;
 }
 
 .card:hover{
-  transform:scale(1.06);
+  transform:scale(1.05);
   box-shadow:
-    0 0 20px cyan,
-    0 0 40px cyan;
+  0 0 25px cyan;
 }
 
 .card span{
   display:block;
-  color:rgba(255,255,255,.5);
   margin-bottom:8px;
+  color:rgba(255,255,255,.5);
   font-size:13px;
 }
 
 .actions{
   margin-top:25px;
   display:flex;
-  flex-wrap:wrap;
   gap:15px;
+  flex-wrap:wrap;
   justify-content:center;
 }
 
-.terminal{
-  display:none;
-  margin-top:25px;
-  background:black;
-  color:lime;
-  border:1px solid lime;
-  padding:20px;
-  border-radius:20px;
-  font-family:monospace;
-}
-
-.voice{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:70px;
-  height:70px;
-  border-radius:50%;
-  background:linear-gradient(to right,cyan,violet);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:28px;
+.actions button{
+  padding:15px 22px;
+  border:none;
+  border-radius:16px;
   cursor:pointer;
-  box-shadow:0 0 30px cyan;
-  animation:floatVoice 3s infinite ease-in-out;
+  font-weight:bold;
+
+  background:
+  linear-gradient(
+  to right,
+  cyan,
+  violet
+  );
 }
 
-@keyframes floatVoice{
-  0%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-10px);
-  }
-  100%{
-    transform:translateY(0);
-  }
+.footer{
+  text-align:center;
+  margin-top:25px;
+  color:rgba(255,255,255,.4);
 }
 
 .error{
@@ -409,10 +334,36 @@ button:hover::before{
   text-align:center;
 }
 
-.footer{
-  text-align:center;
-  margin-top:25px;
-  color:rgba(255,255,255,.4);
+.voice{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  cursor:pointer;
+
+  background:
+  linear-gradient(
+  to right,
+  cyan,
+  violet
+  );
+
+  box-shadow:
+  0 0 30px cyan;
+
+  animation:voiceFloat 3s infinite;
+}
+
+@keyframes voiceFloat{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
 }
 
 </style>
@@ -425,45 +376,61 @@ button:hover::before{
 <div class="glow g1"></div>
 <div class="glow g2"></div>
 
-<div class="anime-circle circle1"></div>
-<div class="anime-circle circle2"></div>
+<!-- SOUNDS -->
+
+<audio id="wrongSound"
+src="https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3">
+</audio>
+
+<audio id="correctSound"
+src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3">
+</audio>
 
 <audio id="scanSound"
 src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3">
 </audio>
 
+<audio id="successSound"
+src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3">
+</audio>
+
+<!-- PASSWORD -->
+
 <div class="password-screen" id="passwordScreen">
+
+<div class="password-box">
 
 <h1>ACCESS SYSTEM</h1>
 
-<input type="password"
+<p>
+Vehicle Intelligence Database
+</p>
+
+<input
+type="password"
 id="passwordInput"
 placeholder="Enter Password">
 
-<button
-style="margin-top:20px;"
-onclick="checkPassword()">
-ENTER
+<button onclick="checkPassword()">
+ENTER DATABASE
 </button>
 
-<p id="passError"
-style="color:red;margin-top:15px;display:none;">
-Wrong Password
-</p>
+<div class="error-text" id="passError">
+Incorrect Password
+</div>
 
 </div>
+
+</div>
+
+<!-- MAIN -->
 
 <div class="container" id="mainSite">
 
 <div class="scanner-line"></div>
 
-<div class="badge">
-<span>LIVE VEHICLE DATABASE</span>
-</div>
-
-<h1 class="title glitch"
-data-text="Vehicle Information">
-Vehicle Information
+<h1 class="title">
+Vehicle Intelligence
 </h1>
 
 <p class="subtitle">
@@ -472,7 +439,8 @@ Website By Samarth
 
 <div class="search-box">
 
-<input type="text"
+<input
+type="text"
 id="vehicleNumber"
 placeholder="Enter Vehicle Number">
 
@@ -484,8 +452,13 @@ SEARCH
 
 <div class="loading" id="loading">
 
-<h3>Scanning Database...</h3>
-<p>Decrypting vehicle records...</p>
+<h3>
+Scanning Vehicle Database...
+</h3>
+
+<p>
+Decrypting records...
+</p>
 
 </div>
 
@@ -493,7 +466,9 @@ SEARCH
 
 <div class="result" id="result">
 
-<h2>Vehicle Information</h2>
+<h2 style="color:cyan;margin-bottom:20px;">
+Vehicle Information
+</h2>
 
 <div class="info-grid"
 id="infoGrid">
@@ -505,36 +480,25 @@ id="infoGrid">
 Copy
 </button>
 
-<button onclick="toggleTerminal()">
-Terminal
+<button onclick="shareResult()">
+Share
 </button>
 
 <button onclick="downloadCard()">
 Download
 </button>
 
-<button onclick="shareResult()">
-Share
-</button>
-
-</div>
-
-<div class="terminal" id="terminal">
-
-> ACCESSING VEHICLE DATABASE...<br>
-> AI MODULE ACTIVATED...<br>
-> DATA DECRYPTED...<br>
-> ACCESS GRANTED...
-
 </div>
 
 </div>
 
 <div class="footer">
-© 2026 Vehicle Information Website By Samarth
+© 2026 Vehicle Intelligence By Samarth
 </div>
 
 </div>
+
+<!-- VOICE -->
 
 <div class="voice"
 onclick="speakMessage()">
@@ -553,6 +517,10 @@ document.getElementById(
 if(pass === 'siri'){
 
 document.getElementById(
+'correctSound'
+).play();
+
+document.getElementById(
 'passwordScreen'
 ).style.display='none';
 
@@ -561,6 +529,10 @@ document.getElementById(
 ).style.display='block';
 
 }else{
+
+document.getElementById(
+'wrongSound'
+).play();
 
 document.getElementById(
 'passError'
@@ -602,14 +574,20 @@ document.getElementById(
 if(!vehicleNumber){
 
 error.style.display='block';
-error.innerText='Enter vehicle number';
+
+error.innerText=
+'Enter vehicle number';
+
 return;
 
 }
 
 loading.style.display='block';
+
 result.style.display='none';
+
 error.style.display='none';
+
 infoGrid.innerHTML='';
 
 document.getElementById(
@@ -619,11 +597,8 @@ document.getElementById(
 try{
 
 const apiUrl =
-'https://corsproxy.io/?' +
-encodeURIComponent(
 'https://api-by-Black-Hats-Hackers.kesug.com/vehicle-api.php?vehicle_no='
-+ vehicleNumber
-);
++ encodeURIComponent(vehicleNumber);
 
 const response =
 await fetch(apiUrl);
@@ -636,7 +611,10 @@ loading.style.display='none';
 if(!data){
 
 error.style.display='block';
-error.innerText='No data found';
+
+error.innerText=
+'No data found';
+
 return;
 
 }
@@ -651,6 +629,7 @@ document.createElement('div');
 card.className='card';
 
 card.innerHTML=`
+
 <span>
 ${key.toUpperCase()}
 </span>
@@ -658,11 +637,16 @@ ${key.toUpperCase()}
 <p>
 ${data[key]}
 </p>
+
 `;
 
 infoGrid.appendChild(card);
 
 }
+
+document.getElementById(
+'successSound'
+).play();
 
 navigator.vibrate?.(150);
 
@@ -691,17 +675,25 @@ alert('Copied');
 
 }
 
-function toggleTerminal(){
+function shareResult(){
 
-const terminal =
-document.getElementById(
-'terminal'
-);
+if(navigator.share){
 
-terminal.style.display =
-terminal.style.display === 'none'
-? 'block'
-: 'none';
+navigator.share({
+
+title:
+'Vehicle Intelligence',
+
+text:
+'Vehicle lookup website by Samarth'
+
+});
+
+}else{
+
+alert('Sharing not supported');
+
+}
 
 }
 
@@ -711,28 +703,13 @@ window.print();
 
 }
 
-function shareResult(){
-
-if(navigator.share){
-
-navigator.share({
-title:'Vehicle Information',
-text:'Vehicle lookup website by Samarth'
-});
-
-}else{
-
-alert('Share not supported');
-
-}
-
-}
-
 function speakMessage(){
 
 const speech =
 new SpeechSynthesisUtterance(
+
 'Welcome to Samarth vehicle intelligence system'
+
 );
 
 speech.lang='en-US';
